@@ -29,3 +29,7 @@ Route::get('/employee', function (Request $request) {
     return response()->json(['employees'=>$employees]);
 });
 
+Route::get('/employee/{employee}', function(App\Models\Employee $employee){
+    return response()->json(['employee'=>$employee]);
+});
+

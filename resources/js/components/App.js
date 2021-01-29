@@ -7,6 +7,7 @@ import { User } from "./User";
 import { Top } from "./Top";
 import { UserDetail } from "./UserDetail";
 import { Employee } from "./Employee";
+import { EmployeeDetail } from "./EmployeeDetail";
 
 export const App = () => {
     return (
@@ -19,7 +20,8 @@ export const App = () => {
                     <Route path="/about" component={About} />
                     <Route path="/user" exact component={User} />
                     <Route path="/user/:id" component={UserDetail} />
-                    <Route path="/employee" component={Employee} />
+                    <Route path="/employee" exact component={Employee} />
+                    <Route path="/employee/:id" component={EmployeeDetail} />
                 </Switch>
             </>
         </Router>

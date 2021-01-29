@@ -74,10 +74,10 @@ export const Employee = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {employees.map((emp) => (
-                                <StyledTableRow key={emp.id}>
+                            {employees.map((employee) => (
+                                <StyledTableRow key={employee.id}>
                                     <StyledTableCell component="th" scope="row">
-                                        {emp.name}
+                                        {employee.name}
                                     </StyledTableCell>
                                     <StyledTableCell>
                                         <Button
@@ -85,7 +85,9 @@ export const Employee = () => {
                                             variant="outlined"
                                             className={classes.button}
                                         >
-                                            <Link to={`/emp/${emp.id}`}>
+                                            <Link
+                                                to={`/employee/${employee.id}`}
+                                            >
                                                 詳細
                                             </Link>
                                         </Button>
