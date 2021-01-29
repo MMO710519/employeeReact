@@ -23,3 +23,9 @@ Route::get('/user', function (Request $request) {
 Route::get('/user/{user}', function(App\Models\User $user){
     return response()->json(['user'=>$user]);
 });
+
+Route::get('/employee', function (Request $request) {
+    $employees = App\Models\Employee::all();
+    return response()->json(['employees'=>$employees]);
+});
+

@@ -20,7 +20,9 @@ export const Header = () => {
         <AppBar position="static" color="secondary">
             <Toolbar>
                 <Typography variant="h6">
-                    Employee Data Management System
+                    <Link className={classes.link} to="/">
+                        Employee Data Management System
+                    </Link>
                 </Typography>
 
                 <div className={classes.right}>
@@ -29,6 +31,9 @@ export const Header = () => {
                     </Link>
                     <Link className={classes.link} to="/user">
                         User
+                    </Link>
+                    <Link className={classes.link} to="/employee">
+                        Employee List
                     </Link>
                 </div>
             </Toolbar>

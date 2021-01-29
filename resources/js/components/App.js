@@ -6,6 +6,7 @@ import { About } from "./About";
 import { User } from "./User";
 import { Top } from "./Top";
 import { UserDetail } from "./UserDetail";
+import { Employee } from "./Employee";
 
 export const App = () => {
     return (
@@ -18,6 +19,7 @@ export const App = () => {
                     <Route path="/about" component={About} />
                     <Route path="/user" exact component={User} />
                     <Route path="/user/:id" component={UserDetail} />
+                    <Route path="/employee" component={Employee} />
                 </Switch>
             </>
         </Router>
