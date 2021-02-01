@@ -70,6 +70,7 @@ export const Employee = () => {
                         <TableHead>
                             <TableRow>
                                 <StyledTableCell>Name</StyledTableCell>
+                                <StyledTableCell>Department</StyledTableCell>
                                 <StyledTableCell>Detail</StyledTableCell>
                             </TableRow>
                         </TableHead>
@@ -78,6 +79,9 @@ export const Employee = () => {
                                 <StyledTableRow key={employee.id}>
                                     <StyledTableCell component="th" scope="row">
                                         {employee.name}
+                                    </StyledTableCell>
+                                    <StyledTableCell>
+                                        {employee.department}
                                     </StyledTableCell>
                                     <StyledTableCell>
                                         <Button
