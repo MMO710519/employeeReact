@@ -5,6 +5,7 @@ import { Header } from "./Header";
 import { About } from "./About";
 import { User } from "./User";
 import { Top } from "./Top";
+import { Register } from "./Register";
 import { UserDetail } from "./UserDetail";
 import { Employee } from "./Employee";
 import { EmployeeDetail } from "./EmployeeDetail";
@@ -22,6 +23,7 @@ export const App = () => {
                     <Route path="/user/:id" component={UserDetail} />
                     <Route path="/employee" exact component={Employee} />
                     <Route path="/employee/:id" component={EmployeeDetail} />
+                    <Route path="/register" component={Register} />
                 </Switch>
             </>
         </Router>

@@ -26,14 +26,14 @@ export const Header = () => {
                 </Typography>
 
                 <div className={classes.right}>
-                    <Link className={classes.link} to="/about">
-                        About
-                    </Link>
                     <Link className={classes.link} to="/user">
                         User
                     </Link>
                     <Link className={classes.link} to="/employee">
                         Employee List
+                    </Link>
+                    <Link className={classes.link} to="/register">
+                        Register
                     </Link>
                 </div>
             </Toolbar>
