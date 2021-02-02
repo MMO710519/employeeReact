@@ -17925,6 +17925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
 /* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Card */ "./node_modules/@material-ui/core/esm/Card/Card.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CardContent */ "./node_modules/@material-ui/core/esm/CardContent/CardContent.js");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
@@ -17960,20 +17961,23 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default)(function (theme) {
   return {
     root: {
-      maxWidth: "700px",
+      maxWidth: "500px",
       marginTop: "50px",
-      margin: "0 auto",
+      margin: "0 auto"
+    },
+    form: {
       "& > *": {
         margin: theme.spacing(1),
-        width: "25ch"
+        width: "40ch"
       }
     },
     formControl: {
       margin: theme.spacing(1),
-      minWidth: 120
+      minWidth: 200
     },
     selectEmpty: {
       marginTop: theme.spacing(2)
@@ -17983,23 +17987,27 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.default
     },
     pos: {
       marginBottom: 12
+    },
+    back: {
+      textAlign: "center",
+      paddingTop: "20px"
     }
   };
 });
 var Register = function Register() {
   var classes = useStyles();
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__.useState("Controlled"),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Controlled"),
+      _useState2 = _slicedToArray(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1];
 
   var handleChange = function handleChange(event) {
     setValue(event.target.value);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__.default, {
       className: classes.root,
       variant: "outlined",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_4__.default, {
@@ -18009,7 +18017,7 @@ var Register = function Register() {
           gutterBottom: true,
           children: "New Employee"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("form", {
-          className: classes.root,
+          className: classes.form,
           noValidate: true,
           autoComplete: "off",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_6__.default, {
@@ -18054,7 +18062,7 @@ var Register = function Register() {
             onChange: handleChange
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_6__.default, {
             id: "date",
-            label: "Birthday",
+            label: "\u751F\u5E74\u6708\u65E5",
             type: "date",
             defaultValue: "2021-01-31",
             className: classes.textField,
@@ -18064,11 +18072,11 @@ var Register = function Register() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_7__.default, {
             className: classes.formControl,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_8__.default, {
-              id: "demo-simple-select-label",
+              id: "dependents",
               children: "\u6276\u990A\u4EBA\u6570"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__.default, {
-              labelId: "demo-simple-select-label",
-              id: "demo-simple-select" // value={dependents}
+              labelId: "dependents",
+              id: "dependents" // value={dependents}
               ,
               onChange: handleChange,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_10__.default, {
@@ -18098,7 +18106,13 @@ var Register = function Register() {
           })]
         })]
       })
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: classes.back,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Link, {
+        to: "/",
+        children: "TOP\u306B\u623B\u308B"
+      })
+    })]
   });
 };
 

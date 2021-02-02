@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
+import { Link } from "react-router-dom";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -12,17 +13,19 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: "700px",
+        maxWidth: "500px",
         marginTop: "50px",
         margin: "0 auto",
+    },
+    form: {
         "& > *": {
             margin: theme.spacing(1),
-            width: "25ch",
+            width: "40ch",
         },
     },
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 120,
+        minWidth: 200,
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -33,11 +36,15 @@ const useStyles = makeStyles((theme) => ({
     pos: {
         marginBottom: 12,
     },
+    back: {
+        textAlign: "center",
+        paddingTop: "20px",
+    },
 }));
 
 export const Register = () => {
     const classes = useStyles();
-    const [value, setValue] = React.useState("Controlled");
+    const [value, setValue] = useState("Controlled");
     const handleChange = (event) => {
         setValue(event.target.value);
     };
@@ -53,7 +60,7 @@ export const Register = () => {
                         New Employee
                     </Typography>
                     <form
-                        className={classes.root}
+                        className={classes.form}
                         noValidate
                         autoComplete="off"
                     >
@@ -86,7 +93,7 @@ export const Register = () => {
                         />
                         <TextField
                             id="date"
-                            label="Birthday"
+                            label="生年月日"
                             type="date"
                             defaultValue="2021-01-31"
                             className={classes.textField}
@@ -95,12 +102,10 @@ export const Register = () => {
                             }}
                         />
                         <FormControl className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-label">
-                                扶養人数
-                            </InputLabel>
+                            <InputLabel id="dependents">扶養人数</InputLabel>
                             <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
+                                labelId="dependents"
+                                id="dependents"
                                 // value={dependents}
                                 onChange={handleChange}
                             >
@@ -118,6 +123,9 @@ export const Register = () => {
                     </form>
                 </CardContent>
             </Card>
+            <div className={classes.back}>
+                <Link to="/">TOPに戻る</Link>
+            </div>
         </>
     );
 };
