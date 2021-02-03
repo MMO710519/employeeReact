@@ -17989,7 +17989,7 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__.default
   };
 });
 var defaultValues = {
-  select: "",
+  department: "",
   input: ""
 };
 var Register = function Register() {
@@ -18062,29 +18062,38 @@ var Register = function Register() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
             className: classes.formControl,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-              id: "demo-simple-select-label",
+              id: "department",
               children: "\u6240\u5C5E\u90E8\u7F72"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
-              labelId: "demo-simple-select-label",
-              id: "demo-simple-select" // value={department}
-              ,
-              onChange: handleChange,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 1,
-                children: "\u55B6\u696D\u90E8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 2,
-                children: "\u958B\u767A\u90E8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 3,
-                children: "\u7DCF\u52D9\u90E8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 4,
-                children: "\u4EBA\u4E8B\u90E8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 5,
-                children: "\u7BA1\u7406\u90E8"
-              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_hook_form__WEBPACK_IMPORTED_MODULE_2__.Controller, {
+              control: control,
+              name: "department",
+              as: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
+                labelId: "department",
+                id: "department" // value={department}
+                ,
+                onChange: handleChange,
+                inputRef: register({
+                  required: true
+                }),
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+                  value: 1,
+                  children: "\u55B6\u696D\u90E8"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+                  value: 2,
+                  children: "\u958B\u767A\u90E8"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+                  value: 3,
+                  children: "\u7DCF\u52D9\u90E8"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+                  value: 4,
+                  children: "\u4EBA\u4E8B\u90E8"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+                  value: 5,
+                  children: "\u7BA1\u7406\u90E8"
+                })]
+              }),
+              error: Boolean(errors.department),
+              helperText: errors.department && "メールの形式で入力してください"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
             id: "standard-multiline-flexible",
@@ -18103,42 +18112,24 @@ var Register = function Register() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
             id: "date",
             label: "\u751F\u5E74\u6708\u65E5",
+            name: "birthday",
             type: "date",
             defaultValue: "2021-01-31",
             className: classes.textField,
             InputLabelProps: {
               shrink: true
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-            className: classes.formControl,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-              id: "dependents",
-              children: "\u6276\u990A\u4EBA\u6570"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
-              labelId: "dependents",
-              id: "dependents" // value={dependents}
-              ,
-              onChange: handleChange,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 0,
-                children: "0"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 1,
-                children: "1"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 2,
-                children: "2"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 3,
-                children: "3"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 4,
-                children: "4"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-                value: 5,
-                children: "5"
-              })]
-            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
+            id: "outlined-basic",
+            inputRef: register({
+              required: true,
+              pattern: /\d{1,4}/i
+            }),
+            name: "dependents",
+            type: "text",
+            label: "\u6276\u990A\u4EBA\u6570",
+            error: Boolean(errors.dependents),
+            helperText: errors.dependents && "扶養人数を半角数字で入力してください"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
             variant: "outlined",
             type: "submit",

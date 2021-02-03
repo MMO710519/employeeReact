@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const defaultValues = {
-    select: "",
+    department: "",
     input: "",
 };
 
@@ -109,21 +109,33 @@ export const Register = () => {
                             }
                         />
                         <FormControl className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-label">
-                                所属部署
-                            </InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                // value={department}
-                                onChange={handleChange}
-                            >
-                                <MenuItem value={1}>営業部</MenuItem>
-                                <MenuItem value={2}>開発部</MenuItem>
-                                <MenuItem value={3}>総務部</MenuItem>
-                                <MenuItem value={4}>人事部</MenuItem>
-                                <MenuItem value={5}>管理部</MenuItem>
-                            </Select>
+                            <InputLabel id="department">所属部署</InputLabel>
+                            <Controller
+                                control={control}
+                                name="department"
+                                as={
+                                    <Select
+                                        labelId="department"
+                                        id="department"
+                                        // value={department}
+                                        onChange={handleChange}
+                                        inputRef={register({
+                                            required: true,
+                                        })}
+                                    >
+                                        <MenuItem value={1}>営業部</MenuItem>
+                                        <MenuItem value={2}>開発部</MenuItem>
+                                        <MenuItem value={3}>総務部</MenuItem>
+                                        <MenuItem value={4}>人事部</MenuItem>
+                                        <MenuItem value={5}>管理部</MenuItem>
+                                    </Select>
+                                }
+                                error={Boolean(errors.department)}
+                                helperText={
+                                    errors.department &&
+                                    "メールの形式で入力してください"
+                                }
+                            />
                         </FormControl>
                         <TextField
                             id="standard-multiline-flexible"
@@ -145,6 +157,7 @@ export const Register = () => {
                         <TextField
                             id="date"
                             label="生年月日"
+                            name="birthday"
                             type="date"
                             defaultValue="2021-01-31"
                             className={classes.textField}
@@ -152,22 +165,21 @@ export const Register = () => {
                                 shrink: true,
                             }}
                         />
-                        <FormControl className={classes.formControl}>
-                            <InputLabel id="dependents">扶養人数</InputLabel>
-                            <Select
-                                labelId="dependents"
-                                id="dependents"
-                                // value={dependents}
-                                onChange={handleChange}
-                            >
-                                <MenuItem value={0}>0</MenuItem>
-                                <MenuItem value={1}>1</MenuItem>
-                                <MenuItem value={2}>2</MenuItem>
-                                <MenuItem value={3}>3</MenuItem>
-                                <MenuItem value={4}>4</MenuItem>
-                                <MenuItem value={5}>5</MenuItem>
-                            </Select>
-                        </FormControl>
+                        <TextField
+                            id="outlined-basic"
+                            inputRef={register({
+                                required: true,
+                                pattern: /\d{1,4}/i,
+                            })}
+                            name="dependents"
+                            type="text"
+                            label="扶養人数"
+                            error={Boolean(errors.dependents)}
+                            helperText={
+                                errors.dependents &&
+                                "扶養人数を半角数字で入力してください"
+                            }
+                        />
                         <Button
                             variant="outlined"
                             type="submit"
